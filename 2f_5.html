@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/aframeMyCSS.CSS">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="js/aframeMyJS.js"></script>
+    <title>榜's World</title>
+</head>
+
+<body>
+    <div class="info-window" id="infoWindow">
+        <button class="close-button" onclick="closeWindow()">X</button>
+        <div id="infoContent">歡迎來玩</div>
+    </div>
+
+    <div class="info-window-center" id="infoWindowCenter">
+        <button class="close-button" onclick="closeWindowCenter()">X</button>
+        <div id="infoContentCenter">我的地區</div>
+    </div>
+
+    <a-scene>
+        <a-assets>
+            <img id="mapIcon" src="images/map.jpg"> <!-- 地图图标 -->
+            <img id="tpeOleHome" src="images/2f_05.webp">
+        </a-assets>
+
+        <!-- 環景圖 -->
+        <a-sky src="#tpeOleHome" rotation="0 180 0"></a-sky>
+        <a-entity camera look-controls></a-entity> <!-- 固定相機位置，刪除此行相機可以WASD移動 -->
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
+        <!-- <a-image src="images/Icon_Go.png" position="0 -0.15 -1" width=".12" height="0.12" rotation="0 0 0" click-show-window data-file="pages/xcWeb.html"></a-image> -->
+        <a-image src="images/Icon_Go.png" position="-.1 0 -.43" width=".12" height="0.12" rotation="0 -180 0" onclick="window.location.href='2f_r2.html'"></a-image>
+        <a-image src="images/Icon_stair.png" position=".8 .3 .2" width=".12" height="0.12" rotation="0 90 0" onclick="window.location.href='3f_1.html'"></a-image>
+        <a-image src="images/Icon_Go.png" position=".8 -.1 -.4" width=".12" height="0.12" rotation="0 -90 0" onclick="window.location.href='2f_1.html'"></a-image>
+    </a-scene>
+
+    <!-- 新增左上角按鈕 按鈕要放在最下面才會顯示在aframe之上-->
+    <button class="top-left-button" onclick="topLeftButtonAction()" data-file="pages/mapIcon.html"></button>
+</body>
+
+</html>
